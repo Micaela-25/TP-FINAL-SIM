@@ -1,0 +1,12 @@
+h1, h2 {
+  font-family: Lato;
+}
+
+body{
+  background-color: rgb(182, 183, 241);
+}
+
+.scrollable {
+  height: 30rem;
+  overflow: scroll;
+}

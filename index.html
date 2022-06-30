@@ -1,0 +1,121 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final de simunlación</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <div id="app"></div>
+  </head>
+
+  <body>
+    <h1 class="text-center">Trabajo práctico - Final de simulación</h1>
+    <h2 class="text-center">Ejercicio 3 - Montecarlo</h2>
+    <form>
+      <!-- Se indica la cantidad de días a simular por parámetro -->
+      <div class="row mb-3 mx-3">
+        <div class="col-md">
+          <label class="form-label" for="txtCantDias"
+            >Cantidad de días a simular (N):
+          </label>
+          <input
+            type="number"
+            class="form-control form-control-sm"
+            id="txtCantDias"
+            name="txtCantDias"
+          />
+        </div>
+        <!-- NO IRÍA EL LAMBDA CREO
+        <div class="col-md">
+          <label class="form-label" for="txtLambda">Lambda (λ): </label>
+          <input
+            type="number"
+            class="form-control form-control-sm"
+            id="txtLambda"
+            name="txtLambda"
+          />
+        </div> -->
+      </div>
+
+      <!-- Se debe indicar desde que día desea ver -->
+      <div class="row mb-3 mx-3">
+        <div class="col-md">
+          <label class="form-label" for="txtIndiceDesde">Día desde:</label>
+          <input
+            type="number"
+            class="form-control form-control-sm"
+            id="txtIndiceDesde"
+            name="txtIndiceDesde"
+          />
+        </div>
+
+        <!-- Se indican cuantos cajones se desea pedir -->
+        <div class="col-md">
+          <label class="form-label" for="cboCantCajones">
+            Cantidad de cajones a pedir por día:
+          </label>
+          <select class="form-select mb-3 tamanio" id="cboCantCajones">
+            <option value="0" selected>Seleccione una opción...</option>
+            <option value="1">3</option>
+            <option value="2">4</option>
+            <option value="3">Cantidad del día anterior</option>
+          </select>
+        </div>
+
+        <!-- Se indica si se quiere o no comprar faltante -->
+        <div class="col-md">
+          <label class="form-label" for="cboCompraFaltante">
+            ¿Desea comprar rosas en caso de que falten?
+          </label>
+          <select class="form-select mb-3 tamanio" id="cboCompraFaltante">
+            <option value="0" selected>Seleccione una opción...</option>
+            <option value="1">No</option>
+            <option value="2">Si</option>
+          </select>
+        </div>
+      </div>
+      <!-- Botón para simular-->
+      <div class="row mb-3 mx-3">
+        <button
+          class="btn btn-dark mb-2 mx-2 form-control form-control-sm"
+          id="btnSimular"
+          type="button"
+          name="btnSimular"
+        >
+          Simular
+        </button>
+      </div>
+
+      <!-- Sección de la tabla-->
+      <div id="divTablaMontecarlo">
+        <div class="modal fade" tabindex="-1" role="dialog" id="spinnerModal">
+          <div
+            class="modal-dialog modal-dialog-centered text-center"
+            role="document"
+          >
+            <span class="fa fa-spinner fa-spin fa-3x w-100"></span>
+          </div>
+        </div>
+
+        <!-- Tabla del montecarlo-->
+        <div class="table-responsive scrollable row mb-3 mx-3">
+          <table id="tablaMontecarlo" class="table table-hover mx-3 mb-3">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <!-- Alerta de ganancia promedio por día-->
+        <div class="mb-3 mx-3 row justify-content-center text-center">
+          <div
+            class="col-md-3 alert alert-info mx-2"
+            role="alert"
+            id="alertGananciaPromDia"
+          ></div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
