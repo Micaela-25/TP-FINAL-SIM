@@ -3,7 +3,7 @@ import { MCFloreria } from './MCFloreria';
 import { HTMLUtils } from './HTMLUtils';
 
 
-// Definición de cuadros de texto de la interfaz de usuario
+// Definición de cuadros de texto de la interfaz de usuarioo
 const txtCantDias: HTMLInputElement = document.getElementById(
   'txtCantDias'
 ) as HTMLInputElement;
